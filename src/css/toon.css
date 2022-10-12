@@ -1,0 +1,53 @@
+/* 스크롤바 없애기 */
+body{
+  -ms-overflow-style: none;
+  overflow: auto;
+  }
+  
+ ::-webkit-scrollbar {
+   display: none;
+ }
+
+ .App {
+  text-align: center;
+  height: fit-content;
+}
+
+img {
+  width: 100%;
+}
+
+.toonimg{
+  width: 100%;
+  font-size: 0;
+  position: absolute;
+  z-index: -2;
+}
+
+.grid {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-image: url('./grid.png');
+  background-repeat: repeat-y;
+  background-size: 100vw;
+}
+
+.pincoms_gridbox {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 25vw;
+}
+
+.item {
+  list-style:none;
+}
+
+.inputForm {
+  position: fixed;
+  top: 0;
+}

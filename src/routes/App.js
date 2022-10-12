@@ -1,42 +1,76 @@
-import { useState } from 'react';
-import Pincom from '../components/Pincom';
-import '../css/App.css';
+import React,{useEffect, useState} from "react";
+import AppRouter from "./Router";
+import {authService,dbService }from "../fbase";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { collection, query, onSnapshot, orderBy } from "firebase/firestore";
 
 function App() {
-  const[gVisible, setGVisible] = useState(false);
-  const[iVisible, setIVisible] = useState(false);
-  const[mLoc, setMLoc] = useState({});
-  
-  //여기 유즈이펙트 쓰기
-  const space = window.innerWidth / 4; 
-  console.log(space);
+  const[init, setInit] = useState(false);
+  // 파이어베이스가 초기화되기를 기다려(처으엔 false) - 그다임 isLoggedIn이 바뀌기를 
+
+  console.log(authService.currentUser);
+  const [userObj,setUserobj] = useState(null);
+  const [comments, setComments] = useState([]);
 
 
-  //핀모드에 들어가면 그리드제시 - 이때 다시 추가버튼이랑 하단바 안보임
-  const onGrid = (e) => {
-    setGVisible(true);
-  }; 
+  useEffect(()=>{
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      //사용자의 상태가바뀌었는지 확인하는 파이어베이스 내장함수 ! !
+      if (user) {
+        setUserobj({
+          displayName: user.displayName,
+          uid: user.uid,
+          updateProfile: (args) => user.updateProfile(args),
+          }); //user가 누구인지 정하기
 
-  const getLoc = (e) => {
-    setMLoc({
-      x: Math.floor(e.pageX / space) + 1,
-      y: Math.floor(e.pageY / space) +1
-    }); //터치한 위치값 받기
+      if (user.displayName === null) { //user의 isplayName이 비어있으면 이메일 앞 아이디로 정하기
+        const name = user.email.split("@")[0];
+        user.displayName = name;
+        }
+      } else {
+      setUserobj(null);
+      }
+      setInit(true);
+      });
 
-   setIVisible(true);
+  },[]);
+
+  useEffect(() => { //실시간 댓글목록 보기
+    const q = query(
+    collection(dbService, "comments"), //dbService안의 콜랙션 comments의 쿼리스냅샷의 Docs를 
+    orderBy("date", "desc"), //생성시기 내림차순으로 들고오기
+    );
+ 
+    //스냅샷을 사용해서 실시간으로 볼 수 있음 ! ! 
+    onSnapshot(q, (snapshot) => { //onSnapshot은 Snapshot을 얻는 거임  Snapshot은 우리가 가진 query와 같은것 
+   
+       const commenArr = snapshot.docs.map((document) => ({ //snapshot은 docs를 가지고 있음
+    id: document.id,
+    ...document.data(),
+    }));
+    setComments(commenArr); //comments 목록 업데이트
+    });
+    }, []);
+
+  const refreshUser = () => {
+    const user = authService.currentUser;
+    setUserobj({
+      displayName: user.displayName,
+      uid: user.uid,
+      updateProfile: (args) => user.updateProfile(args),
+    });
   };
 
-  return (
-    <div className="App" style={{ position: 'relative'}}>
-      <div className='toon'><img src="img/toon.png" alt='toon'/></div>
-      {/* 그리드 이미지 전부넣지말고 4개있는 이미지 맵으로 툰이미지 길이 값 받아와서 */}
-      {iVisible && <Pincom mLoc={mLoc} />}
-      {gVisible && <div className='grid' onClick={getLoc}><img src="img/grid.png" alt='grid'/></div> }
-      <button onClick={onGrid} style={{ position: 'fixed', top: 40}}>핀댓글 추가하기</button>
-      <div style={{ position: 'fixed', top: 40}}>X:{mLoc.y}  Y:{mLoc.x}</div>
-
-    </div>
-  );
+  return(
+  <>
+  {init ? <AppRouter 
+   refreshUser={refreshUser}
+   isLoggedIn={Boolean(userObj)} 
+   userObj={userObj} comments={comments}
+  /> 
+   : "Initializing..." }
+  </>)
 }
-
+ 
 export default App;
