@@ -8,17 +8,18 @@ export default function UseScrollMemo() {
   
   const { pathname } = useLocation();
 
+
   useEffect(() => {
+    //전체목록에 들어가면 맨 상단으로 스크롤
     if(pathname === '/allcomment'){
       window.scrollTo(0, 0);
+
+    // 다시 전체 홈으로 오면 이전에 저장해둔 스크롤 위치로 돌아오기
     } else if(pathname === '/') {
       window.scrollTo(0,scrollY);
     }
   }, [pathname, scrollY]);
 
-
-  // var scroll = animateScroll;
-  // window.scrollTo(0,10932);
 
 //# 스크롤 위치 기억
 //> 스크롤 저장
