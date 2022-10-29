@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/dippin/static/css/main.d5bab607.css",
-    "main.js": "/dippin/static/js/main.f20e1620.js",
+    "main.js": "/dippin/static/js/main.8f730532.js",
     "static/js/787.b6f589d5.chunk.js": "/dippin/static/js/787.b6f589d5.chunk.js",
     "index.html": "/dippin/index.html",
     "main.d5bab607.css.map": "/dippin/static/css/main.d5bab607.css.map",
-    "main.f20e1620.js.map": "/dippin/static/js/main.f20e1620.js.map",
+    "main.8f730532.js.map": "/dippin/static/js/main.8f730532.js.map",
     "787.b6f589d5.chunk.js.map": "/dippin/static/js/787.b6f589d5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d5bab607.css",
-    "static/js/main.f20e1620.js"
+    "static/js/main.8f730532.js"
   ]
 }
