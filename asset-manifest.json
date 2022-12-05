@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/dippin/static/css/main.ac0ed246.css",
-    "main.js": "/dippin/static/js/main.a1eb8569.js",
+    "main.css": "/dippin/static/css/main.3f9986a2.css",
+    "main.js": "/dippin/static/js/main.621b6aab.js",
     "static/js/787.b6f589d5.chunk.js": "/dippin/static/js/787.b6f589d5.chunk.js",
     "static/media/slick.svg": "/dippin/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/dippin/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/dippin/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/dippin/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/dippin/index.html",
-    "main.ac0ed246.css.map": "/dippin/static/css/main.ac0ed246.css.map",
-    "main.a1eb8569.js.map": "/dippin/static/js/main.a1eb8569.js.map",
+    "main.3f9986a2.css.map": "/dippin/static/css/main.3f9986a2.css.map",
+    "main.621b6aab.js.map": "/dippin/static/js/main.621b6aab.js.map",
     "787.b6f589d5.chunk.js.map": "/dippin/static/js/787.b6f589d5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ac0ed246.css",
-    "static/js/main.a1eb8569.js"
+    "static/css/main.3f9986a2.css",
+    "static/js/main.621b6aab.js"
   ]
 }
