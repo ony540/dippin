@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react";
+import React,{useEffect, useState, useRef} from "react";
 import AppRouter from "./Router";
 import {authService,dbService }from "../fbase";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -6,12 +6,15 @@ import { collection, query, onSnapshot, orderBy } from "firebase/firestore";
 
 function App() {
   const[init, setInit] = useState(false);
-  // 파이어베이스가 초기화되기를 기다려(처으엔 false) - 그다임 isLoggedIn이 바뀌기를 
+  // 파이어베이스가 초기화되기를 기다려(처음엔 false) - 그다임 isLoggedIn이 바뀌기를 
 
-  console.log(authService.currentUser);
+  // console.log(authService.currentUser);
   const [userObj,setUserobj] = useState(null);
   const [comments, setComments] = useState([]);
-
+  const [scrollY, setScrollY] = useState(0);
+  const [refId, setRefId]= useState(null);
+  const tabRef= useRef([]);
+  const[show, setShow] = useState(false);
 
   useEffect(()=>{
     const auth = getAuth();
@@ -45,7 +48,7 @@ function App() {
     //스냅샷을 사용해서 실시간으로 볼 수 있음 ! ! 
     onSnapshot(q, (snapshot) => { //onSnapshot은 Snapshot을 얻는 거임  Snapshot은 우리가 가진 query와 같은것 
    
-       const commenArr = snapshot.docs.map((document) => ({ //snapshot은 docs를 가지고 있음
+    const commenArr = snapshot.docs.map((document) => ({ //snapshot은 docs를 가지고 있음
     id: document.id,
     ...document.data(),
     }));
@@ -62,12 +65,20 @@ function App() {
     });
   };
 
+
+
   return(
   <>
-  {init ? <AppRouter 
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+/>
+  {init ? 
+  <AppRouter 
    refreshUser={refreshUser}
    isLoggedIn={Boolean(userObj)} 
-   userObj={userObj} comments={comments}
+   userObj={userObj} comments={comments} scrollY={scrollY} setScrollY={setScrollY} tabRef={tabRef} refId={refId} setRefId={setRefId} 
+   show={show} setShow={setShow}
   /> 
    : "Initializing..." }
   </>)

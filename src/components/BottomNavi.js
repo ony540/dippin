@@ -1,18 +1,23 @@
 import React from "react";
 import {Link} from "react-router-dom"
 
-function BottomNavi() {
+function BottomNavi({scrollY, setScrollY,navShow}) {
+  const onClick= (e) => {
+    setScrollY(window.scrollY);
+    console.log(scrollY);
+  }
+
   return(
-    <nav style={{position: "fixed", right:0 }}>
-      <li>이전화</li>
-      <li>컷저장</li>
-      <li><Link to="/allcomment">
-      전체댓글
-      </Link></li>
-      <li>회차목록</li>
-      <li>다음화</li>
+    <nav className={navShow ? "bottomNavi" : "bottomNavi disappear bnDis"}>
+      <li><img src={`${process.env.PUBLIC_URL}/img/prev.png`} alt="prev"/></li>
+      <li><img src={`${process.env.PUBLIC_URL}/img/cuts.png`} alt="cuts"/></li>
+      <li onClick={onClick} ><Link to='/allcomment'>
+        <img src={`${process.env.PUBLIC_URL}/img/allcom.png`} alt="allcoms"/>
+        </Link></li>
+      <li><img src={`${process.env.PUBLIC_URL}/img/list.png`} alt="list"/></li>
+      <li><img src={`${process.env.PUBLIC_URL}/img/next.png`} alt="next"/></li>
     </nav>
   )
 };
 
-export default BottomNavi;
+export default React.memo(BottomNavi);

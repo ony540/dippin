@@ -1,0 +1,115 @@
+
+.modalBack {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+}
+
+/* 삭제모달 */
+
+.delmodal {
+  width:100%;
+  height: 365px;
+  position: absolute;
+  bottom: -47%;
+  left: 0;
+  background-color:#303545;
+  border-radius: 20px 20px 0 0;
+  text-align: center;
+  z-index: 999;
+  transition: all 0.35s;
+  font-weight: 500;
+  font-size: 16px;
+  color: #A9ACBB;
+}
+
+.xx{
+  width: 24px;
+  margin: 30px 20px 20px auto;
+}
+
+.delboo {
+  width: 100px;
+}
+
+h6 {
+  font-weight: 600;
+  font-size: 22px;
+  color: #fcfcfc;
+  margin: 19px 0 13px 0;
+}
+
+.btns{
+  margin: 40px 20px 14px;
+}
+
+.btn{
+  display: inline-block;
+  width: calc(50% - 8px);
+  height: 53px;
+  margin-right: 8px;
+  border-radius: 12px;
+  line-height: 53px;
+  background: #404658;
+}
+
+.btO{
+  background: #454CE7;
+  color: #FCFCFC;
+}
+
+/* 필터 모달 */
+
+.sortmodal {
+  width:100%;
+  height: 216px;
+  position: absolute;
+  bottom: -30%;
+  left: 0;
+  background-color:#303545;
+  border-radius: 20px 20px 0 0;
+  text-align: left;
+  font-weight: 600;
+  z-index: 999;
+  transition: all 0.35s;
+  font-size: 16px;
+}
+
+.sortmodal h4 {
+  margin: 32px 0 0 20px;
+  font-size: 22px;
+}
+
+.sortmodal .sortx {
+  margin-top: 0;
+  position: relative;
+  top: -24px;
+}
+.undermodal{
+  bottom: 0;
+}
+
+.checklist{
+  color: #A9ACBB;
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: -28px;
+
+}
+.checklist li {
+  padding: 16px 20px;
+
+}
+.checklist img{
+  width: 24px;
+  float: right;
+}

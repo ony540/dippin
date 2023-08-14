@@ -3,11 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.2.0",
-    "@fortawesome/react-fontawesome": "^0.2.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "date-fns": "^2.29.3",
     "dotenv": "^16.0.3",
     "firebase": "^9.10.0",
     "gh-pages": "^4.0.0",
@@ -17,7 +16,9 @@
     "react-router-dom": "^6.4.0",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.7",
+    "react-slick": "^0.29.0",
     "redux": "^4.2.0",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -46,5 +47,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://ony540.github.io/dippin/"
+  "homepage": "https://ony540.github.io/dippin/",
+  "devDependencies": {
+    "@types/styled-components": "^5.1.26"
+  }
 }
