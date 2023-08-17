@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/dippin/static/css/main.8cf22d96.css",
-    "main.js": "/dippin/static/js/main.53b57476.js",
+    "main.css": "/dippin/static/css/main.bbf212df.css",
+    "main.js": "/dippin/static/js/main.c990e7c5.js",
     "static/js/787.b6f589d5.chunk.js": "/dippin/static/js/787.b6f589d5.chunk.js",
     "static/media/google.png": "/dippin/static/media/google.9db27c1011edb821b59c.png",
+    "static/media/plus.png": "/dippin/static/media/plus.1035051b0d5cc339a94d.png",
+    "static/media/pinbt.png": "/dippin/static/media/pinbt.03ed8d12081ef92a7ccf.png",
     "static/media/slick.svg": "/dippin/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/dippin/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/dippin/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/dippin/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/dippin/index.html",
-    "main.8cf22d96.css.map": "/dippin/static/css/main.8cf22d96.css.map",
-    "main.53b57476.js.map": "/dippin/static/js/main.53b57476.js.map",
+    "main.bbf212df.css.map": "/dippin/static/css/main.bbf212df.css.map",
+    "main.c990e7c5.js.map": "/dippin/static/js/main.c990e7c5.js.map",
     "787.b6f589d5.chunk.js.map": "/dippin/static/js/787.b6f589d5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8cf22d96.css",
-    "static/js/main.53b57476.js"
+    "static/css/main.bbf212df.css",
+    "static/js/main.c990e7c5.js"
   ]
 }
