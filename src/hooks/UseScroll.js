@@ -1,27 +1,38 @@
-import { useEffect } from 'react';
+import { useContext, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import debounce from "../utils/debounce";
+import useCommentIdState from "./useCommentIdState";
+import { scrollMemoryContext } from "../context/scrollMemoryContext";
 
-export default function UseScroll({scrollY,refId,tabRef}) {
+export default function useScroll(tabRef) {
+    const { pathname } = useLocation();
+    const [scrollMemory, setScrollMemory] = useContext(scrollMemoryContext);
+    const [commentId] = useCommentIdState();
 
-  const { pathname } = useLocation();
+    const handleSetScrollY = debounce(() => {
+        setScrollMemory({ ...scrollMemory, [pathname]: document.documentElement.scrollTop || window.scrollY });
+    }, 500);
 
-  useEffect(() => {
-    console.log(pathname);
-    //전체목록에 들어가면 맨 상단으로 스크롤
-    if(pathname === '/allcomment'){
-      window.scrollTo(0, 0);
-    
-    // 다시 전체 홈으로 오면 이전에 저장해둔 스크롤 위치로 돌아오기
-    } else if(pathname === '/') {
-      window.scrollTo(0,scrollY);
-    }
-  }, [pathname, scrollY]);
+    useEffect(() => {
+        window.addEventListener("scroll", handleSetScrollY);
+        return () => {
+            window.removeEventListener("scroll", handleSetScrollY);
+        };
+    });
 
-  //allcom에서 이미지클릭하면 해당 위치로 이동
-  useEffect(()=>{
-    console.log(refId);
-    tabRef.current[refId] &&
-    tabRef.current[refId].scrollIntoView({block: "center"});
-  },[ refId, tabRef])
+    useEffect(() => {
+        if (pathname === "/") {
+            window.scrollTo(0, scrollMemory[pathname]);
+        } else {
+            window.scrollTo(0, 0);
+        }
+    }, []);
 
+    useEffect(() => {
+        if (pathname === "/" && tabRef.current[commentId]) {
+            //commentId를 가진 tabRef가 보이도록 이동
+            console.log(tabRef.current[commentId]);
+            tabRef.current[commentId].scrollIntoView({ block: "center" });
+        }
+    }, [commentId]);
 }

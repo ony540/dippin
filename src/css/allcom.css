@@ -1,121 +1,117 @@
-
-.bod{
-    background-color: #21212C;
+.bod {
+    background-color: #21212c;
 }
 
 /* 타이틀 */
 
-.tit{
-  margin: 0;
-  padding: 0;
+.tit {
+    margin: 0;
+    padding: 0;
 }
 
-
-.back{
-  margin:15.5px 0 15.5px 20px ;
-  width: 24px;
-  position: absolute;
+.back {
+    margin: 15.5px 0 15.5px 20px;
+    width: 24px;
+    position: absolute;
 }
-.tit .txt{
-  line-height: 55px;
-  font-size: 18px;
-  font-weight: 700;
-  text-align: center;
-  width: 100%;
+.tit .txt {
+    line-height: 55px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
 }
 
 /* 필터 */
-.filter{
-  display: block;
-  padding:6px 8px;
-  background: #303545;
-  border-radius: 8px;
-  margin-left: auto;
-  margin: 8px 20px 0 auto;
-  line-height: 17px;
+.filter {
+    display: block;
+    padding: 6px 8px;
+    background: #303545;
+    border-radius: 8px;
+    margin-left: auto;
+    margin: 8px 20px 0 auto;
+    line-height: 17px;
 }
 
 .filter img {
-  width: 16px;
-  margin-right: 4px;
+    width: 16px;
+    margin-right: 4px;
 }
 /* 댓글 */
-.combox{
-  margin: 0 20px;
+.combox {
+    margin: 0 20px;
 }
 
 /* 프로필 */
 
 .prof {
-  padding: 0;
-  margin:16px 0 0 0;
+    padding: 0;
+    margin: 16px 0 0 0;
 }
-.prof li{
-  display: inline-block;
-  margin-right: 6px;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
+.prof li {
+    display: inline-block;
+    margin-right: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
 }
 
-.profImg{
-  width: 24px;  
+.profImg {
+    width: 24px;
 }
 .nam {
-  opacity: 0.4;
+    opacity: 0.4;
 }
 
-.best{
-  width: 44px;
-  height: 18px;
-  margin: 3px 0;
+.best {
+    width: 44px;
+    height: 18px;
+    margin: 3px 0;
 }
 
 /* 더보기(좋아요, 삭제) */
-.more{
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
-  top: -20px;
-  margin: 0;
+.more {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: -20px;
+    margin: 0;
 }
 
 .like {
-  top: unset;
-  margin-right: 8px;
+    top: unset;
+    margin-right: 8px;
 }
 
-.del{
-  width: 16px;
-  height: 16px;
-  margin-top: 0.9px;
+.del {
+    width: 16px;
+    height: 16px;
+    margin-top: 0.9px;
 }
 
 /* 댓글 내용 */
-
 .com {
-  margin:-8px 12px 12px 0;
-  font-size: 16px;
-  line-height: 150%;
-  width: 288px;
-  display: inline-block;
-  vertical-align: top;
+    margin: -8px 12px 12px 0;
+    font-size: 16px;
+    line-height: 150%;
+    width: 288px;
+    display: inline-block;
+    vertical-align: top;
 }
 
 /* 사진 썸네일 */
-.combox .thumnail{
-  display: inline-block;
-  height: 50px;
-  width: 50px;
-  overflow: hidden;
-  border-radius: 2px;
-  margin-bottom: 16px;
-
+.combox .thumnail {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    border-radius: 2px;
+    margin-bottom: 16px;
 }
-.combox .thumnail img{
-justify-content: center;
+.combox .thumnail img {
+    justify-content: center;
 }
 
-.combox{
-  border-bottom: 1px solid rgba(252, 252, 252, 0.04);
+.combox {
+    border-bottom: 1px solid rgba(252, 252, 252, 0.04);
 }

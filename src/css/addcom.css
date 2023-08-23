@@ -1,62 +1,62 @@
-
-
-.inputbox{
-  position: fixed;
-  bottom: 0;
-  background-color: #21212C;
-  width: 100%;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  height: 113px;
+.inputbox {
+    position: fixed;
+    bottom: 0;
+    background-color: #21212c;
+    width: 390px;
+    border-radius: 30px 30px 0 0;
+    height: 113px;
 }
+
 .inputForm {
-  margin: 12px 20px;
-  background-color: #2E323E;
-  width: calc(100% - 40px);
-  height: 45px;
-  border-radius: 30px;
+    margin: 12px 20px;
+    background-color: #2e323e;
+    width: calc(100% - 40px);
+    height: 45px;
+    border-radius: 30px;
 }
 
-.text_input{
-  height: 45px;
-  width: calc(100% - 75px);
-  margin-left: 20px;
+.text_input {
+    height: 45px;
+    width: calc(100% - 75px);
+    margin-left: 20px;
 }
 
-.canSm{
-  opacity:1 !important;
+.canSm {
+    opacity: 1 !important;
 }
 
-.inputForm button{
-  position: fixed;
-  width: 20px;
-  right: 36px;
-  bottom: 27px;
-  opacity: 0.3;
+.inputForm button {
+    all: unset;
+    position: absolute;
+    width: 20px;
+    right: 36px;
+    bottom: 24px;
+    opacity: 0.3;
+    margin-right: 0;
 }
 
-.order{
-  margin: 20px 0 4px 20px;
-  color: #A9ACBB;
-  font-size: 16px;
-  line-height: 150%;
+.order {
+    margin: 20px 0 4px 20px;
+    color: #a9acbb;
+    font-size: 16px;
+    line-height: 150%;
 }
 
-.letterlimit{
-  font-size: 12px;
-  color: #A9ACBB;
-  position: absolute;
-  top: 23px;
-  right: 26px;
+.letterlimit {
+    font-size: 12px;
+    color: #a9acbb;
+    position: absolute;
+    top: 23px;
+    right: 26px;
 }
 
-.thumpincom_box .pin{
-  position: relative;
-  top: calc(50% - 16px);
-  left: calc(50% - 17px);
+.thumpincom_box .pin {
+    position: relative;
+    top: calc(50% - 16px);
+    left: calc(50% - 17px);
 }
 
 .pin img {
- width: 35px;
- height: 35px;
+    width: 35px;
+    height: 35px;
 }

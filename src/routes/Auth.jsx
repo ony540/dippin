@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import "../css/auth.css";
-import googleIcon from "../img/google.png";
+import googleIcon from "../img/icon/google.png";
 
 function Auth() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [newAccount, setNewAccount] = useState(true);
+    const [email, setEmail] = useState("dippin@test.com");
+    const [password, setPassword] = useState("123456");
+    const [newAccount, setNewAccount] = useState(false);
     const [error, setError] = useState("");
 
     const onChange = (event) => {
@@ -33,7 +33,6 @@ function Auth() {
                 // eslint-disable-next-line no-unused-vars
                 data = await signInWithEmailAndPassword(auth, email, password);
             }
-            // console.log(data);
         } catch (error) {
             setError(error.message);
         }
@@ -50,19 +49,21 @@ function Auth() {
 
     return (
         <div className="authContainer">
-            <h2>로그인</h2>
-            <form onSubmit={onSubmit} className="container">
-                <input name="email" type="email" placeholder="Email" required value={email} onChange={onChange} className="authInput" />
-                <input name="password" type="password" placeholder="Password" required value={password} onChange={onChange} className="authInput" />
+            <h2> {newAccount ? "회원가입" : "로그인"}</h2>
+            <form onSubmit={onSubmit}>
+                <label htmlFor="email">이메일</label>
+                <input id="email" type="email" required value={email} onChange={onChange} className="authInput" />
+                <label htmlFor="password">비밀번호</label>
+                <input id="password" type="password" required value={password} onChange={onChange} className="authInput" />
                 <button type="submit" className=" authSubmit">
                     {newAccount ? "회원가입" : "로그인"}
                 </button>
                 {error && <span className="authError">{error}</span>}
+                <button onClick={onSocialClick} name="google" className="authBtn">
+                    <img src={googleIcon} alt="구글 아이콘" />
+                    구글로 시작하기
+                </button>
             </form>
-            <button onClick={onSocialClick} name="google" className="authBtn">
-                <img src={googleIcon} alt="구글 아이콘" />
-                구글로 시작하기
-            </button>
             <span onClick={toggleAccount} className="authSwitch">
                 {newAccount ? "로그인" : "회원가입"}
             </span>
