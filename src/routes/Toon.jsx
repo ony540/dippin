@@ -27,6 +27,10 @@ function Toon({ userObj, comments, tabRef, show, setShow }) {
 
     const [navShow, setNavShow, isOnGrid] = useNavigationShow(flow);
 
+    useEffect(() => {
+        console.log(isOnGrid);
+    }, [isOnGrid]);
+
     //add 안내문구 사라지기
     const [disp, setDisp] = useState(false);
     function setDtru() {

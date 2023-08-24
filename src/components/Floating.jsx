@@ -39,7 +39,7 @@ export default function Floating({ flow, navShow, setFlow, setShow, show, isOnGr
                 </li>
                 {flow === 0 && (
                     <li className="plus">
-                        <button type="button" onClick={isOnGrid ? undefined : onGrid}>
+                        <button type="button" onClick={isOnGrid ? onGrid : undefined}>
                             <img src={plusIcon} alt="plus" />
                         </button>
                     </li>
